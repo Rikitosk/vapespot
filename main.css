@@ -8,8 +8,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    font-weight: 180;
+    font-weight: 400; /* Более легкий шрифт для читаемости */
     font-size: 16px;
+    line-height: 1.6;
 }
 
 a {
@@ -22,7 +23,6 @@ img {
 }
 
 .wrapper {
-    background: #EEAECA;
     background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     width: 100%;
 }
@@ -30,10 +30,14 @@ img {
 .container {
     width: 1400px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 header {
     padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .logo {
@@ -52,7 +56,6 @@ header .logo:hover {
 }
 
 header nav {
-    float: right;
     width: 50%;
 }
 
@@ -60,12 +63,7 @@ header nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    z-index: 2;
-    position: relative;
-}
-
-header nav ul li {
-    display: inline-block;
+    align-items: center;
 }
 
 header nav ul li a {
@@ -86,12 +84,37 @@ header nav ul li a:hover {
 header nav ul li.btn a {
     padding: 9px 17px;
     border-radius: 5px;
+    background: linear-gradient(90deg, rgba(148, 187, 233, 1) 0%, rgba(238, 174, 202, 1) 100%);
+    color: white; /* Изменил цвет текста для лучшей контрастности */
+}
+
+/* Добавлены новые стили для кнопки входа для админа */
+header nav ul li.admin-btn a {
+    padding: 9px 17px;
+    border-radius: 5px;
+    background: #4A4A4A;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+header nav ul li.admin-btn a:hover {
+    background: #FF5C5C;
+    transform: translateY(-2px);
 }
 
 .hero {
     padding-bottom: 100px;
     position: relative;
     z-index: 1;
+    display: flex; /* Используем Flexbox для основного контента */
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
 
 .hero--info {
@@ -105,7 +128,6 @@ header nav ul li.btn a {
 }
 
 .hero--info h2 {
-    padding: 20px;
     font-size: 30px;
     font-weight: 800;
     transition: all 0.5s ease;
@@ -117,10 +139,10 @@ header nav ul li.btn a {
 }
 
 .hero--info h1 {
-    padding: 20px;
     font-size: 20px;
     font-weight: 800;
     transition: all 0.5s ease;
+    margin-top: 20px;
 }
 
 .hero--info:hover h1 {
@@ -152,7 +174,6 @@ header nav ul li.btn a {
     margin-bottom: 10px;
 }
 
-
 .hero--info .btn {
     background: linear-gradient(90deg, rgba(148, 187, 233, 1) 0%, rgba(238, 174, 202, 1) 100%);
     color: #4A4A4A;
@@ -166,6 +187,7 @@ header nav ul li.btn a {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .hero--info .btn:hover {
@@ -174,14 +196,96 @@ header nav ul li.btn a {
 }
 
 .hero img {
-    position: absolute;
-    top: 20px;
-    right: 100px;
+    /* Для Flexbox убираем абсолютное позиционирование */
+    position: static;
+    flex-shrink: 0;
+    max-width: 50%;
     transition: transform 0.5s ease-in-out;
 }
 
 .hero img:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
+}
+
+/* Новые стили для каталога */
+.trending {
+    padding: 50px 0;
+    position: relative;
+}
+
+.trending__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.trending__header h3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #4A4A4A;
+    margin: 0;
+}
+
+.trending__header .see-all {
+    color: #4A4A4A;
+    font-size: 32px;
+    float: right;
+    font-weight: 600;
+    border-bottom: 2px solid #4A4A4A;
+    transition: all 0.3s ease;
+}
+
+.trending__header .see-all:hover {
+    color: #FF5C5C;
+    border-color: #FF5C5C;
+}
+
+.trending__products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.trending__product-block {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Выравнивание по центру теперь применяется к содержимому блока */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.trending__product-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.trending__product-block img {
+    /* Обновлено: теперь все изображения имеют одинаковый размер 150x150px */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.trending__product-block span {
+    display: flex;
+    align-items: center;
+    /* Обновлено: теперь иконка и текст выровнены по центру */
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4A4A4A;
+}
+
+.trending__product-block span img {
+    /* Размер иконки возвращен на 20px */
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 
 /* Медиа-запрос для мобильных устройств (ширина экрана до 768px) */
@@ -190,16 +294,16 @@ header nav ul li.btn a {
         width: 100%;
         padding: 0 20px;
     }
-    
+
     header {
+        flex-direction: column;
         text-align: center;
         padding: 30px 0;
+        gap: 20px;
     }
-
+    
     header nav {
-        float: none;
         width: 100%;
-        margin-top: 20px;
     }
 
     header nav ul {
@@ -208,29 +312,45 @@ header nav ul li.btn a {
         gap: 15px;
     }
 
+    .hero {
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+
     .hero--info {
         width: 100%;
-        padding-top: 20px;
+        padding-top: 0;
         text-align: center;
     }
 
-    .hero--info h2 {
-        font-size: 24px;
+    .hero--info h2, .hero--info h1 {
         padding: 0;
     }
 
-    .hero--info h1 {
-        font-size: 18px;
-        padding: 0;
-    }
-    
     .hero--info p,
     .hero--info ul {
         margin: 20px 0;
+        text-align: left;
+    }
+    
+    .hero img {
+        width: 80%;
     }
 
-    .hero img {
-        position: static;
-        margin-top: 40px;
+    .trending__header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
+
+    .trending__products {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.tovar span img { /* это иконка огня */
+    width: 20px; /* Размер иконки возвращен на 20px */
+    height: 20px;
+    margin-right: 5px;
 }
