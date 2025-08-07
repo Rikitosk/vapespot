@@ -213,21 +213,21 @@ header nav ul li.admin-btn a:hover {
     position: relative;
 }
 
-.trending__header {
+.trending_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.trending__header h3 {
+.trending_header h3 {
     font-size: 30px;
     font-weight: 700;
     color: #4A4A4A;
     margin: 0;
 }
 
-.trending__header .see-all {
+.trending_header .see-all {
     color: #4A4A4A;
     font-size: 32px;
     float: right;
@@ -236,18 +236,18 @@ header nav ul li.admin-btn a:hover {
     transition: all 0.3s ease;
 }
 
-.trending__header .see-all:hover {
+.trending_header .see-all:hover {
     color: #FF5C5C;
     border-color: #FF5C5C;
 }
 
-.trending__products {
+.trending_products {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-.trending__product-block {
+.trending_product-block {
     flex: 1;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 15px;
@@ -258,12 +258,12 @@ header nav ul li.admin-btn a:hover {
     transition: all 0.3s ease;
 }
 
-.trending__product-block:hover {
+.trending_product-block:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.trending__product-block img {
+.trending_product-block img {
     /* Обновлено: теперь все изображения имеют одинаковый размер 150x150px */
     width: 150px;
     height: 150px;
@@ -271,7 +271,7 @@ header nav ul li.admin-btn a:hover {
     margin-bottom: 15px;
 }
 
-.trending__product-block span {
+.trending_product-block span {
     display: flex;
     align-items: center;
     /* Обновлено: теперь иконка и текст выровнены по центру */
@@ -281,7 +281,7 @@ header nav ul li.admin-btn a:hover {
     color: #4A4A4A;
 }
 
-.trending__product-block span img {
+.trending_product-block span img {
     /* Размер иконки возвращен на 20px */
     width: 20px;
     height: 20px;
@@ -337,13 +337,13 @@ header nav ul li.admin-btn a:hover {
         width: 80%;
     }
 
-    .trending__header {
+    .trending_header {
         flex-direction: column;
         text-align: center;
         gap: 15px;
     }
 
-    .trending__products {
+    .trending_products {
         flex-direction: column;
         gap: 20px;
     }
@@ -354,3 +354,4 @@ header nav ul li.admin-btn a:hover {
     height: 20px;
     margin-right: 5px;
 }
+
