@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit; 
+    color: inherit;
 }
 
 img {
@@ -37,18 +37,18 @@ header {
 }
 
 header .logo {
-    color: #4A4A4A; 
+    color: #4A4A4A;
     text-transform: uppercase;
-    font-size: 26px; 
-    font-weight: 700; 
-    letter-spacing: 2px; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
-    transition: all 0.3s ease; 
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 header .logo:hover {
-    color: #FF5C5C; 
-    transform: translateY(-2px); 
+    color: #FF5C5C;
+    transform: translateY(-2px);
 }
 
 header nav {
@@ -69,18 +69,18 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #4A4A4A; 
+    color: #4A4A4A;
     text-transform: uppercase;
-    font-size: 15px; 
-    font-weight: 700; 
-    letter-spacing: 2px; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 500ms ease;
 }
 
 header nav ul li a:hover {
-    color: cadetblue; 
-    border-bottom: 5px solid #4A4A4A; 
+    color: cadetblue;
+    border-bottom: 5px solid #4A4A4A;
 }
 
 header nav ul li.btn a {
@@ -97,12 +97,11 @@ header nav ul li.btn a {
 .hero--info {
     width: 500px;
     padding-top: 70px;
-    transition: all 0.5s ease; 
+    transition: all 0.5s ease;
 }
 
-/* При наведении на весь блок hero--info, он поднимается */
 .hero--info:hover {
-    transform: translateY(-10px); 
+    transform: translateY(-10px);
 }
 
 .hero--info h2 {
@@ -112,10 +111,9 @@ header nav ul li.btn a {
     transition: all 0.5s ease;
 }
 
-/* При наведении на родительский блок, изменяется заголовок h2 */
 .hero--info:hover h2 {
-    letter-spacing: 2px; 
-    color: #555; 
+    letter-spacing: 2px;
+    color: #555;
 }
 
 .hero--info h1 {
@@ -125,54 +123,114 @@ header nav ul li.btn a {
     transition: all 0.5s ease;
 }
 
-/* При наведении на родительский блок, изменяется заголовок h1 */
 .hero--info:hover h1 {
-    color: #555; 
-    letter-spacing: 2px; 
+    color: #555;
+    letter-spacing: 2px;
 }
 
-.hero--info p {
-    font-weight: 800;
+.hero--info p,
+.hero--info ul {
+    font-weight: 500;
     line-height: 170%;
     margin: 30px 0;
     transition: all 0.5s ease;
 }
 
-/* При наведении на родительский блок, изменяется параграф p */
-.hero--info:hover p {
-    color: #555; /* Затемняем цвет текста на более тёмный */
-    font-size: 18px; /* Чуть увеличиваем размер шрифта для лучшей читаемости */
-    font-weight: 600; /* Делаем шрифт чуть жирнее, но не слишком */
+.hero--info:hover p,
+.hero--info:hover ul {
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
 }
 
+.hero--info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.hero--info ul li {
+    margin-bottom: 10px;
+}
+
+
 .hero--info .btn {
-    /* Инвертированный градиент для кнопки */
     background: linear-gradient(90deg, rgba(148, 187, 233, 1) 0%, rgba(238, 174, 202, 1) 100%);
-    color: #4A4A4A; 
-    border: none; 
+    color: #4A4A4A;
+    border: none;
     border-radius: 100px;
-    padding: 12px 25px; 
+    padding: 12px 25px;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-    transition: all 0.3s ease; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .hero--info .btn:hover {
-    transform: translateY(-3px) scale(1.05); 
-    box-shadow: 0 15px 30px rgba(255, 92, 92, 0.4), 0 5px 15px rgba(255, 255, 255, 0.3); 
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 92, 92, 0.4), 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .hero img {
     position: absolute;
     top: 20px;
     right: 100px;
-    transition: transform 0.5s ease-in-out; 
+    transition: transform 0.5s ease-in-out;
 }
 
 .hero img:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
+}
+
+/* Медиа-запрос для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    header {
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    header nav {
+        float: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero--info {
+        width: 100%;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .hero--info h2 {
+        font-size: 24px;
+        padding: 0;
+    }
+
+    .hero--info h1 {
+        font-size: 18px;
+        padding: 0;
+    }
+    
+    .hero--info p,
+    .hero--info ul {
+        margin: 20px 0;
+    }
+
+    .hero img {
+        position: static;
+        margin-top: 40px;
+    }
 }
