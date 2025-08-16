@@ -6,6 +6,21 @@
     box-sizing: border-box;
 }
 
+.logo {
+  display: block;
+  width: 200px;
+  height: 200px;
+  /* Убираем все фоновые свойства */
+  background: none;
+  background-image: url('/img/Logo/изображение_2025-08-16_164013728-removebg-preview.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400; /* Более легкий шрифт для читаемости */
@@ -23,8 +38,22 @@ img {
 }
 
 .wrapper {
-    background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-    width: 100%;
+  background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background-size: 200% 200%; /* Увеличиваем размер градиента для анимации */
+  width: 100%;
+  animation: AnimateBG 20s ease infinite; /* Применяем анимацию */
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
@@ -213,41 +242,41 @@ header nav ul li.admin-btn a:hover {
     position: relative;
 }
 
-.trending_header {
+.trending__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.trending_header h3 {
-    font-size: 30px;
+.trending__header h3 {
+    font-size: 20px;
     font-weight: 700;
     color: #4A4A4A;
     margin: 0;
 }
 
-.trending_header .see-all {
+.trending__header .see-all {
     color: #4A4A4A;
-    font-size: 32px;
+    font-size: 20px;
     float: right;
     font-weight: 600;
     border-bottom: 2px solid #4A4A4A;
     transition: all 0.3s ease;
 }
 
-.trending_header .see-all:hover {
+.trending__header .see-all:hover {
     color: #FF5C5C;
     border-color: #FF5C5C;
 }
 
-.trending_products {
+.trending__products {   /*В ряд или список*/
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-.trending_product-block {
+.trending__product-block {  /*ПОКАЗАТЬ*/
     flex: 1;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 15px;
@@ -258,12 +287,12 @@ header nav ul li.admin-btn a:hover {
     transition: all 0.3s ease;
 }
 
-.trending_product-block:hover {
+.trending__product-block:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.trending_product-block img {
+.trending__product-block img {
     /* Обновлено: теперь все изображения имеют одинаковый размер 150x150px */
     width: 150px;
     height: 150px;
@@ -271,7 +300,7 @@ header nav ul li.admin-btn a:hover {
     margin-bottom: 15px;
 }
 
-.trending_product-block span {
+.trending__product-block span {
     display: flex;
     align-items: center;
     /* Обновлено: теперь иконка и текст выровнены по центру */
@@ -281,7 +310,7 @@ header nav ul li.admin-btn a:hover {
     color: #4A4A4A;
 }
 
-.trending_product-block span img {
+.trending__product-block span img {
     /* Размер иконки возвращен на 20px */
     width: 20px;
     height: 20px;
@@ -337,13 +366,13 @@ header nav ul li.admin-btn a:hover {
         width: 80%;
     }
 
-    .trending_header {
+    .trending__header {
         flex-direction: column;
         text-align: center;
         gap: 15px;
     }
 
-    .trending_products {
+    .trending__products {
         flex-direction: column;
         gap: 20px;
     }
@@ -355,3 +384,54 @@ header nav ul li.admin-btn a:hover {
     margin-right: 5px;
 }
 
+/* Контакты */
+
+.hero-about {
+    position: relative;
+    height: 900px;
+}
+
+.hero-about .info {
+    width: 500px;
+    padding: 50px 0;
+
+}
+
+.hero-about .info h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.hero-about .info p {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.hero-about .info .btn {
+    background: linear-gradient(90deg, rgba(148, 187, 233, 1) 0%, rgba(238, 174, 202, 1) 100%);
+    color: #4A4A4A;
+    border: none;
+    border-radius: 100px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.hero-about .info .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 92, 92, 0.4), 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.hero-about img {
+    position: absolute;
+    padding-top: 50px;
+    height: 800px;
+    right: -200px;
+    top: 0;
+}
